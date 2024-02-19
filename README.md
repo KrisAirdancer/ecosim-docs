@@ -1,5 +1,3 @@
-# EcoSim
-
 EcoSim is an economy simulation engine for Unity games. With EcoSim, developers can quickly add economies with dynamic and responsive item prices to their games. EcoSim allows for the configuration of different commodities with varying levels of supply and demand, the sensitivity of commodity prices to changes in supply and demand, as well as inflation and deflation of prices.
 
 # Quick Start
