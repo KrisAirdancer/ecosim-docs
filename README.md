@@ -4,9 +4,11 @@ EcoSim is an economy simulation engine for Unity games. With EcoSim, developers 
 
 If you want to get up and running quickly, start by making a new commodity for each one of the items in your game. EcoSim comes with a single commodity configured as an example. Copy the configurations from this commodity to the new commodities you are making for your game. These configurations will give you items with stable prices. Finally, delete the default commodity.
 
-From here, you can adjust the configurations for each commodity to customize their behavior.
+All of the above steps can be completed using the Unit UI Tools that come with EcoSim and are located in the toolbar at the top of the Unity editor.
 
-All of the above steps can be completed using the Unit UI Tools that come with EcoSim. See the below section "Using the Unity UI Tools" for information on how to use these tools.
+From here, you can adjust the configurations for each commodity to customize their behavior. Additionally, the behavior of the simulation can be viewed visually using the EcoSim Vis tool (see the "EcoSim Vis" section for instructions on using this tool).
+
+For information on configuring the the behavior of the simulation, see the "Setup & Configurations" section below.
 
 # How It Works
 
@@ -65,7 +67,14 @@ To achieve the desired behavior, the following properties can be configured for 
 
 ### Events Configuration
 
-TODO: 
+An event consists of a change in supply, a change in demand, or both for a specific commodity.
+
+A single event can consist of an adjustment to a single commodity or an adjustment to many commodities. When the event is run, it will apply all of the adjustments to the economic simulation at once.
+
+To configure an event, use the Unity UI Tools to update the following values.
+- "Commodity" - the exact name of the commodity that the event will affect.
+- "Supply Shift" - the amount by which the event will change the supply of the specified commodity.
+- "Demand Shift" - the amount by which the event will change the demand of the specified commodity.
 
 ### Configuration Tips
 
@@ -99,4 +108,10 @@ EcoSim Vis is a visualization tool that provides better insight into the behavio
 
 With this tool, you can more easily see an overview of your game's economy and quickly determine which commodities are behaving as desired and which ones are not.
 
-// TODO: Add screenshots of EcoSim Vis and some notes on how to use it.
+The following steps outline how to use EcoSim vis.
+
+1) Start your game as normal.
+2) Press spacebar to start the economic simulation.
+3) Press 8 on the keyboard to open EcoSim Vis.
+
+From here, the panel showing the economic simulation data will be displayed. You can now hover over each of the commodity entries to display their data graphically in the plots on the right-hand side of the screen.
