@@ -4,7 +4,7 @@ EcoSim is an economy simulation engine for Unity games. With EcoSim, developers 
 
 If you want to get up and running quickly, start by making a new commodity for each one of the items in your game. EcoSim comes with a single commodity configured as an example. Copy the configurations from this commodity to the new commodities you are making for your game. These configurations will give you items with stable prices. Finally, delete the default commodity.
 
-All of the above steps can be completed using the Unit UI Tools that come with EcoSim and are located in the toolbar at the top of the Unity editor.
+All of the above steps can be completed using the Unity UI Tools that come with EcoSim and are located in the toolbar at the top of the Unity editor.
 
 From here, you can adjust the configurations for each commodity to customize their behavior. Additionally, the behavior of the simulation can be viewed visually using the EcoSim Vis tool (see the "EcoSim Vis" section for instructions on using this tool).
 
