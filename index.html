@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoSim</title>
+</head>
+<body>
+    <h1>EcoSim</h1>
+    <main>
+        <button
+            id="lightDarkButton"
+            onclick="toggleDarkMode()"
+            class="btn-dark"
+        >
+            🌙
+        </button>
+        <p>
+            EcoSim is an economy simulation engine for Unity games. Just as physics engines were created to allow game developers to easily add realistic physics to their games, EcoSim was developed to make it easy to develop realistic in-game economies.
+        </p>
+    </main>
+</body>
+</html>
+<script>
+    let darkClasses = [
+        "bg-dark",
+        "font-gray"
+    ]
+
+    let darkModeActive = false;
+    function toggleDarkMode()
+    {
+        let body = document.querySelector("body");
+        let lightDarkButton = document.getElementById("lightDarkButton")
+        if (darkModeActive)
+        {
+            darkClasses.forEach(darkClass => {
+                body.classList.remove(darkClass);
+            })
+
+            lightDarkButton.innerText = "🌙";
+            lightDarkButton.classList.add("btn-dark")
+            
+        }
+        else
+        {
+            darkClasses.forEach(darkClass => {
+                body.classList.add(darkClass);
+            })
+            
+            lightDarkButton.innerText = "☀️";
+            lightDarkButton.classList.remove("btn-dark")
+            
+        }
+        darkModeActive = !darkModeActive;
+    }
+</script>
+<style>
+    html {
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    }
+
+    body {
+        margin: 2% 10% 2% 10%;
+    }
+
+    #lightDarkButton {
+        border-radius: 100px;
+    }
+
+    /***** DARK MODE STYLES *****/
+    .bg-dark {
+        background-color: rgb(31 41 55);
+    }
+
+    .font-gray {
+        color: rgb(229 231 235);
+    }
+
+    .btn-dark {
+        background-color: rgb(31 41 55);
+    }
+</style>
