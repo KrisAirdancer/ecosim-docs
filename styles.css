@@ -6,35 +6,66 @@ body {
     margin: 2% 10% 2% 10%;
 }
 
-a {
-    text-decoration: none;
-    color: inherit;
-}
-
 nav {
     display: flex;
 }
 
 nav > a {
+    text-decoration: none;
+    color: inherit;
     margin-right: 10px;
 }
 
 img {
+    width: 100%;
+    max-width: 700px;
     border: 2px solid rgb(156 163 175);
     border-radius: 10px;
+}
+
+.font-sky-600 {
+    color: rgb(2 132 199);
 }
 
 #lightDarkButton {
     border-radius: 100px;
 }
 
-/***** LIGHT MODE STYLES *****/
+/***** CARD STYLES *****/
 
-.font-sky-400 {
-    color: rgb(56 189 248);
+.card {
+    box-sizing: border-box;
+    padding: 10px 20px 10px 20px;
+    margin-top: 15px;
+
+    width: 100%;
+    max-width: 700px;
+    
+    border: 2px solid rgb(156 163 175);
+    border-radius: 10px;
+
+    background-color: rgb(55 65 81);
+}
+
+.card h2 {
+    margin: 0 0 10px 0;
+}
+
+.card h3 {
+    margin: 10px 0 10px 0;
+}
+
+.card p {
+    padding: 0;
+    margin: 0;
+}
+
+.card a {
+    color: rgb(2 132 199);
 }
 
 /***** DARK MODE STYLES *****/
+
 .bg-dark {
     background-color: rgb(31 41 55);
 }
@@ -45,8 +76,4 @@ img {
 
 .btn-dark {
     background-color: rgb(31 41 55);
-}
-
-.font-sky-600 {
-    color: rgb(2 132 199);
 }

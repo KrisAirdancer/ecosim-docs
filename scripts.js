@@ -26,8 +26,8 @@ function toggleDarkMode()
         lightDarkButton.innerText = "🌙";
         lightDarkButton.classList.add("btn-dark")
 
-        navbar.classList.add("font-sky-600")
-        navbar.classList.remove("font-sky-400")
+        // navbar.classList.add("font-sky-600")
+        // navbar.classList.remove("font-sky-400")
     }
     else
     {
@@ -38,8 +38,8 @@ function toggleDarkMode()
         lightDarkButton.innerText = "☀️";
         lightDarkButton.classList.remove("btn-dark")
 
-        navbar.classList.remove("font-sky-600")
-        navbar.classList.add("font-sky-400")
+        // navbar.classList.remove("font-sky-600")
+        // navbar.classList.add("font-sky-400")
     }
 
     darkModeActive = !darkModeActive;
