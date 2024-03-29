@@ -44,7 +44,7 @@ img {
     border: 2px solid rgb(156 163 175);
     border-radius: 10px;
 
-    background-color: rgb(55 65 81);
+    background-color: rgb(209 213 219);
 }
 
 .card h2 {
@@ -76,4 +76,8 @@ img {
 
 .btn-dark {
     background-color: rgb(31 41 55);
+}
+
+.bg-gray-700 {
+    background-color: rgb(55 65 81);
 }

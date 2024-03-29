@@ -16,7 +16,7 @@ function toggleDarkMode()
 {
     let body = document.querySelector("body");
     let lightDarkButton = document.getElementById("lightDarkButton")
-    let navbar = document.querySelector("nav");
+    let cards = document.querySelectorAll(".card");
     if (darkModeActive)
     {
         darkClasses.forEach(darkClass => {
@@ -26,8 +26,9 @@ function toggleDarkMode()
         lightDarkButton.innerText = "🌙";
         lightDarkButton.classList.add("btn-dark")
 
-        // navbar.classList.add("font-sky-600")
-        // navbar.classList.remove("font-sky-400")
+        cards.forEach(card => {
+            card.classList.remove("bg-gray-700")
+        })
     }
     else
     {
@@ -37,9 +38,10 @@ function toggleDarkMode()
         
         lightDarkButton.innerText = "☀️";
         lightDarkButton.classList.remove("btn-dark")
-
-        // navbar.classList.remove("font-sky-600")
-        // navbar.classList.add("font-sky-400")
+        
+        cards.forEach(card => {
+            card.classList.add("bg-gray-700")
+        });
     }
 
     darkModeActive = !darkModeActive;
