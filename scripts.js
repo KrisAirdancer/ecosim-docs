@@ -1,3 +1,6 @@
+let archDiagram_light_SRC = "./assets/ecosim-light.svg";
+let archDiagram_dark_src = "./assets/ecosim-dark.svg";
+
 let darkClasses = [
     "bg-dark",
     "font-gray"
@@ -17,6 +20,8 @@ function toggleDarkMode()
     let body = document.querySelector("body");
     let lightDarkButton = document.getElementById("lightDarkButton")
     let cards = document.querySelectorAll(".card");
+    let archDiagram = document.getElementById("architecture-diagram");
+    console.log(archDiagram)
     if (darkModeActive)
     {
         darkClasses.forEach(darkClass => {
@@ -26,6 +31,8 @@ function toggleDarkMode()
         lightDarkButton.innerText = "🌙";
         lightDarkButton.classList.add("btn-dark")
 
+        archDiagram.src = archDiagram_light_SRC;
+        
         cards.forEach(card => {
             card.classList.remove("bg-gray-700")
         })
@@ -39,12 +46,14 @@ function toggleDarkMode()
         lightDarkButton.innerText = "☀️";
         lightDarkButton.classList.remove("btn-dark")
         
+        archDiagram.src = archDiagram_dark_src;
+
         cards.forEach(card => {
             card.classList.add("bg-gray-700")
         });
     }
-
+    
     darkModeActive = !darkModeActive;
-
+    
     localStorage.setItem("darkModeActive", darkModeActive);
 }

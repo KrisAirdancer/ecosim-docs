@@ -9,7 +9,8 @@
 </head>
 <body>
     <header>
-        <h1>EcoSim</h1>
+        <h1 id="homepageTitle">EcoSim</h1>
+        <p id="homepageTagline">A better way to build in-game economies.</p>
         <nav class="font-sky-600">
             <a href="https://krisairdancer.github.io/ecosim-docs/docs.html">Docs</a>
             <a href="https://krisairdancer.github.io/ecosim-docs/about.html">About</a>
@@ -26,6 +27,32 @@
         <p>
             EcoSim is an economy simulation engine for Unity games. Just as physics engines were created to allow game developers to easily add realistic physics to their games, EcoSim was developed to make it easy to develop realistic in-game economies.
         </p>
+
+        <img id="architecture-diagram" src="./assets/ecosim-dark-3.svg">
+
+        <h2>Project Architecture</h2>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloremque tenetur ratione accusantium accusamus recusandae, nesciunt eaque fugit cum at eos?</p>
+
+        <h3>EcoEngine</h3>
+        <p>EcoEngine is home to the core simulation logic of EcoSim. It tracks prices, supply (units available), and demand (units wanted) for each of the items in your game in real time as events occur.</p>
+
+        <h3>EcoSim Bridge</h3>
+        <p>EcoSim Bridge is the link between EcoSim and your Unity game. Once you've defined the serialization methods for your in-game items in EcoSim Bridge, EcoSim is ready to go!</p>
+        
+        <h3>Unity Configuration Tools</h3>
+        <p>EcoSim comes with a set of configuration tools that are built into Unity and can be used to quickly add, remove, and configure items in the simulation; create economic events; adjust the simulation settings; and track it's behavior in real-time during development.</p>
+        
+        <h4>Simulation Visualizer</h4>
+        <p>EcoSim's Simulation Visualizer is a Unity UI Tool that provides key metrics about each of the items in the economic simulation and a graph of trends in a selected commodity over time. Since the visualizer updates in real-time, you can quickly gain valuable insights into how your simulation is running and apply events to see how your economy responds.</p>
+
+        <h3>Config Files</h3>
+        <p>All of the simulation settings, including item-specific settings, are stored in JSON format for ease of use. If writing raw JSON is your thing, you can configure your entire simulation via these files.</p>
+        
+        <h3>Unity Engine</h3>
+        <p>EcoSim connects directly to the Unity game engine via EcoSim Bridge so you don't have to worry about setting up a complicated API to link EcoSim to Unity.</p>
+        
+        <h3>Unity Game</h3>
+        <p>EcoSim is designed to be plugged directly into an existing Unity game. Simply install the EcoSim package in your game, setup EcoSim Bridge, and you're off!</p>
     </main>
 </body>
 </html>
