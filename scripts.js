@@ -1,4 +1,4 @@
-let archDiagram_light_SRC = "./assets/ecosim-light.svg";
+let archDiagram_light_src = "./assets/ecosim-light.svg";
 let archDiagram_dark_src = "./assets/ecosim-dark.svg";
 
 let darkClasses = [
@@ -31,7 +31,7 @@ function toggleDarkMode()
         lightDarkButton.innerText = "🌙";
         lightDarkButton.classList.add("btn-dark")
 
-        archDiagram.src = archDiagram_light_SRC;
+        if (archDiagram) { archDiagram.src = archDiagram_light_src; }
         
         cards.forEach(card => {
             card.classList.remove("bg-gray-700")
@@ -46,7 +46,7 @@ function toggleDarkMode()
         lightDarkButton.innerText = "☀️";
         lightDarkButton.classList.remove("btn-dark")
         
-        archDiagram.src = archDiagram_dark_src;
+        if (archDiagram) { archDiagram.src = archDiagram_dark_src; }
 
         cards.forEach(card => {
             card.classList.add("bg-gray-700")
