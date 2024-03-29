@@ -1,6 +1,6 @@
 # About
 
-<a href="https://krisairdancer.github.io/ecosim-docs/about.md">Home</a>
+<a href="https://krisairdancer.github.io/ecosim-docs/">Home</a>
 
 Hello! We're team EcoSim.
 
