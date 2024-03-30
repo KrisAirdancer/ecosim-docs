@@ -31,50 +31,73 @@
         <p>
             From left: Chris Marston, Jared Hogan, Christian Gray, and Alex Fischer.
         </p>
-        <div class="card">
-            <h2>
-                Chris Marston
-            </h2>
-            <p>
-                Chris has a degree in Anthropology, but has come back to school for a BS in Computer Science. When he's not studying for exams, you'll likely find him at his computer working on projects, climbing, hiking, or mountain biking.
-            </p>
-            <h3>Contact</h3>
-            <p>chris.scott.marston@gmail.com</p>
-            <p><a href="https://www.linkedin.com/in/chris-s-marston/">LinkedIn</a></p>
-            <p><a href="https://csmarston.com/">Portfolio</a></p>
-        </div>
-        <div class="card">
-            <h2>
-                Jared Hogan
-            </h2>
-            <p>
-                Jared...
-            </p>
-            <h3>Contact</h3>
-            <p>jared@email.com</p>
-            <p><a href="https://www.linkedin.com/in/jared-hogan-6a3a421a8/">LinkedIn</a></p>
-        </div>
-        <div class="card">
-            <h2>
-                Christian Gray
-            </h2>
-            <p>
-                Christian...
-            </p>
-            <h3>Contact</h3>
-            <p>christian@email.com</p>
-            <p><a href="https://www.linkedin.com/in/christianggray/">LinkedIn</a></p>
-        </div>
-        <div class="card">
-            <h2>
-                Alex Fischer
-            </h2>
-            <p>
-                Alex...
-            </p>
-            <h3>Contact</h3>
-            <p>alex@email.com</p>
-        </div>
+        <div id="personnel-cards"></div>
     </main>
 </body>
 </html>
+<script>
+    let personnelData = [
+        {
+            firstName: "Chris",
+            lastName: "Marston",
+            email: "chris.scott.marston@gmail.com",
+            linkedIn: "https://www.linkedin.com/in/chris-s-marston/",
+            portfolio: "https://csmarston.com/",
+            bio: "Chris has a degree in Anthropology, but has come back to school for a BS in Computer Science. When he's not studying for exams, you'll likely find him at his computer working on projects, climbing, hiking, or mountain biking."
+        },
+        {
+            firstName: "Jared",
+            lastName: "Hogan",
+            email: "jared@email.com",
+            linkedIn: "https://www.linkedin.com/in/jared-hogan-6a3a421a8/",
+            portfolio: "",
+            bio: "Jared..."
+        },
+        {
+            firstName: "Christian",
+            lastName: "Gray",
+            email: "christain@email.com",
+            linkedIn: "https://www.linkedin.com/in/christianggray/",
+            portfolio: "",
+            bio: "Christian..."
+        },
+        {
+            firstName: "Alex",
+            lastName: "Fischer",
+            email: "alex@email.com",
+            linkedIn: "",
+            portfolio: "",
+            bio: "Alex..."
+        }
+    ]
+
+    let personnelCards = document.getElementById("personnel-cards");
+    let personnelHTML = ""
+    personnelData.forEach(person => {
+        personnelHTML += `
+            <div class="card">
+                <h2>
+                    ${person.firstName} ${person.lastName}
+                </h2>
+                <p>
+                    ${person.bio}
+                </p>
+                <h3>Contact</h3>
+                ${person.email ?
+                    `<p>${person.email}</p>` :
+                    ''
+                }
+                ${person.linkedIn ?
+                    `<p><a href='${person.linkedIn}'>LinkedIn</a></p>` :
+                    ''
+                }
+                ${person.portfolio ?
+                    `<p><a href='${person.portfolio}'>Portfolio</a></p>` :
+                    ''
+                }
+            </div>
+        `
+    });
+
+    personnelCards.innerHTML = personnelHTML;
+</script>
