@@ -6,6 +6,10 @@ body {
     margin: 2% 10% 2% 10%;
 }
 
+main {
+    max-width: 700px;
+}
+
 nav {
     display: flex;
 }
