@@ -34,7 +34,32 @@
 
         <h2>Installation</h2>
         <p>
-            TODO...
+            <ol>
+                <li>Download the EcoSim package. The latest version can be found <a href="TODO">here</a>.</li>
+                <li>Create a new Unity project or open an existing one.</li>
+                <li>
+                    Import the EcoSim package into Unity by either,
+                    <ul>
+                        <li>dragging the package into the "Assets" folder in your Unity project,</li>
+                        <li>or by right clicking on the "Assets" folder, selecting "Import Package" then "Custom Package".</li>
+                    </ul>
+                </li>
+                <li>Create a new game object to be used as the EcoSimManager object.</li>
+                    <ul>
+                        <li>The EcoSimManager object allows your game to communicate with EcoSim.</li>
+                    </ul>
+                <li>Name the new game object "EcoSimManager".</li>
+                <li>Use the "Inspector" tool to add the "EcosimManager" script to the new game object.</li>
+                <li>Tick the "Run Simulation" and "Self Update" options in the script's inspector menu.</li>
+                    <ul><li>This will ensure that the simulation runs when your game is started and can be configured differently per your needs.</li></ul>
+                <li>Run your game in Unity.</li>
+                <li>In Unity, navigate to "EcoSim" &gt; "Visualizer" to open the EcoSim simulation Visualizer tool.</li>
+                <li>Select one of the default simulations from the "Simulation" dropdown.</li>
+                <li>If EcoSim has been installed correctly, simulation data should be displayed in the Visualizer.</li>
+                <li>The simulation must now be connected to your game via implementation of the "EcoSimBridge" class.</li>
+                    <ul><li>For instructions on how to do this, see the "Implementing EcoSImBridge" section of these docs.</li></ul>
+                <li>If all of the above steps have been completed, installation and setup is done and you can now configure the simulation to your needs.</li>
+            </ol>
         </p>
         
         <h2>Implementing EcoSim Bridge</h2>
