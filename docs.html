@@ -9,7 +9,9 @@
 </head>
 <body>
     <header>
-        <h1>Documentation</h1>
+        <h1>
+            Documentation
+        </h1>
         <nav class="font-sky-600">
             <a href="https://krisairdancer.github.io/ecosim-docs/">Home</a>
             <a href="https://krisairdancer.github.io/ecosim-docs/about.html">Team</a>
@@ -27,47 +29,219 @@
             Welcome to the EcoSim docs!
         </p>
 
-        <h2>Current Version</h2>
+        <h2>
+            Current Version
+        </h2>
         <p>
             TODO: Link to GitHub repo and project version.
         </p>
 
-        <h2>Installation</h2>
+        <h2>
+            Installation
+        </h2>
         <p>
             <ol>
-                <li>Download the EcoSim package. The latest version can be found <a href="TODO">here</a>.</li>
-                <li>Create a new Unity project or open an existing one.</li>
+                <li>
+                    Download the EcoSim package. The latest version can be found <a href="TODO">here</a>.
+                </li>
+                <li>
+                    Create a new Unity project or open an existing one.
+                </li>
                 <li>
                     Import the EcoSim package into Unity by either,
                     <ul>
-                        <li>dragging the package into the "Assets" folder in your Unity project,</li>
-                        <li>or by right clicking on the "Assets" folder, selecting "Import Package" then "Custom Package".</li>
+                        <li>
+                            dragging the package into the "Assets" folder in your Unity project,
+                        </li>
+                        <li>
+                            or by right clicking on the "Assets" folder, selecting "Import Package" then "Custom Package".
+                        </li>
                     </ul>
                 </li>
-                <li>Create a new game object to be used as the EcoSimManager object.</li>
+                <li>
+                    Create a new game object to be used as the EcoSimManager object.
+                </li>
                     <ul>
-                        <li>The EcoSimManager object allows your game to communicate with EcoSim.</li>
+                        <li>
+                            The EcoSimManager object allows your game to communicate with EcoSim.
+                        </li>
                     </ul>
-                <li>Name the new game object "EcoSimManager".</li>
-                <li>Use the "Inspector" tool to add the "EcosimManager" script to the new game object.</li>
-                <li>Tick the "Run Simulation" and "Self Update" options in the script's inspector menu.</li>
-                    <ul><li>This will ensure that the simulation runs when your game is started and can be configured differently per your needs.</li></ul>
-                <li>Run your game in Unity.</li>
-                <li>In Unity, navigate to "EcoSim" &gt; "Visualizer" to open the EcoSim simulation Visualizer tool.</li>
-                <li>Select one of the default simulations from the "Simulation" dropdown.</li>
-                <li>If EcoSim has been installed correctly, simulation data should be displayed in the Visualizer.</li>
-                <li>The simulation must now be connected to your game via implementation of the "EcoSimBridge" class.</li>
-                    <ul><li>For instructions on how to do this, see the "Implementing EcoSImBridge" section of these docs.</li></ul>
-                <li>If all of the above steps have been completed, installation and setup is done and you can now configure the simulation to your needs.</li>
+                <li>
+                    Name the new game object "EcoSimManager".
+                </li>
+                <li>
+                    Use the "Inspector" tool to add the "EcosimManager" script to the new game object.
+                </li>
+                <li>
+                    Tick the "Run Simulation" and "Self Update" options in the script's inspector menu.
+                </li>
+                    <ul>
+                        <li>
+                            This will ensure that the simulation runs when your game is started and can be configured differently per your needs.
+                        </li>
+                    </ul>
+                <li>
+                    Run your game in Unity.
+                </li>
+                <li>
+                    In Unity, navigate to "EcoSim" &gt; "Visualizer" to open the EcoSim simulation Visualizer tool.
+                </li>
+                <li>
+                    Select one of the default simulations from the "Simulation" dropdown.
+                </li>
+                <li>
+                    If EcoSim has been installed correctly, simulation data should be displayed in the Visualizer.
+                </li>
+                <li>
+                    The simulation must now be connected to your game via implementation of the "EcoSimBridge" class.
+                </li>
+                    <ul>
+                        <li>
+                            For instructions on how to do this, see the "Implementing EcoSImBridge" section of these docs.
+                        </li>
+                    </ul>
+                <li>
+                    If all of the above steps have been completed, installation and setup is done and you can now configure the simulation to your needs.
+                </li>
             </ol>
         </p>
         
-        <h2>Implementing EcoSim Bridge</h2>
+        <h2>
+            Implementing EcoSim Bridge
+        </h2>
         <p>
-            TODO...
+            EcoSimBridge is a static class that defines the connection between your game's ScriptableObjects and EcoSim.
         </p>
-
-        <h2>Converting Package Files Into a Unity Build</h2>
+        <p>
+            Specifically, EcoSim needs to know how which of your in-game objects correspond to which commodities in the economic simulation. EcoSimBridge is where you will define that link.
+        </p>
+        <p>
+            Because Unity provides developers with wide flexibility in defining their ScriptableObjects, you must tell EcoSim how you've defined them. As such, there are several methods in the EcoSimBridge class that will require implementations that instruct EcoSimBridge how to work with your ScriptableObjects.
+        </p>
+        <p>
+            Before we being, note that EcoSimBridge is implemented as a static class, but that this is only done for convenience. If you would like to change this, you may do so.
+        </p>
+        <p>
+            The following steps outline how to implement the EcoSimBridge Class.
+        </p>
+        <p>
+            *Note that example implementations are provided for the methods that you will need to implement.
+        </p>
+        <ol>
+            <li>
+                Implement <code>CreateNewCommodity()</code> method.
+            </li>
+                <ul>
+                    <li>
+                        This method takes in a Unity ScriptableObject and creates a commodity in the simulation based on its properties.
+                    </li>
+                    <li>
+                        Additionally, later in this guide, you will need to select a property to be used as a unique identifier for each commodity. So it is a good idea to include something like an ID or name from your ScriptableObjects in this step.
+                    </li>
+                </ul>
+            <li>
+                Implement the <code>RegisterScriptableObjectAndCommodity</code> method.
+            </li>
+                <ul>
+                    <li>
+                        This method connects Unity ScriptableObjects to a unique identifier used to link them to commodities in the economic simulation.
+                    </li>
+                </ul>
+            <li>
+                Implement the <code>RegisterScriptableObjectWithConfig()</code> method.
+            </li>
+                <ul>
+                    <li>
+                        This method is used to match each of the ScriptableObjects in your game with a commodity in the simulation when your game first starts up.
+                    </li>
+                </ul>
+            <li>
+                Implement the <code>LoadScriptableObjectsFromDisk()</code> method.
+            </li>
+                <ul>
+                    <li>
+                        By default, this method loads data from the disk into a generic Unity object, and will need to be updated if you need a more specific type to be returned.
+                    </li>
+                    <li>
+                        Otherwise, you can leave this method as is.
+                    </li>
+                </ul>
+            <li>
+                Implement the <code>GetItemPrice()</code> method.
+            </li>
+                <ul>
+                    <li>
+                        This method returns the price associated with a given Unity ScriptableObject.
+                    </li>
+                    <li>
+                        Since this method needs knowledge of your specific ScriptableObjects, you will need to implement this method with logic that accesses EcoSim's DataAPI to get the price of the ScriptableObject.
+                    </li>
+                    <li>
+                        The methods you've implemented up to this point as well as the ones described below will be useful when implementing this method.
+                    </li>
+                </ul>
+        </ol>
+        <h3>
+            Provided EcoSimBridge Methods
+        </h3>
+        <p>
+            The following methods are part of the EcoSimBridge class but do not need to be implemented by you. Instead, they are needed by EcoSimBridge and can also serve as useful functionality for your use when implementing your portion of EcoSimBridge.
+        </p>
+        <ul>
+            <li>
+                <code>ExportScriptableObjectsToCommodities()</code>
+            </li>
+                <ul>
+                    <li>
+                        This method takes in a path to the directory where your ScriptableObjects are stored and creates a new commodity in the simulation that is associated with each one.
+                    </li>
+                </ul>
+            <li>
+                <code>SetCurrentEcoEngine()</code>
+            </li>
+                <ul>
+                    <li>
+                        This method sets which economic simulation EcoSimBridge will use when responding to subsequent requests (method calls) and can be called anywhere in your game code that it is needed.
+                    </li>
+                    <li>
+                        Call this method when you need to access commodities in one simulation or the other.
+                    </li>
+                    <li>
+                        If you aren't using multiple economic simulations in your game, you can ignore this method.
+                    </li>
+                </ul>
+            <li>
+                <code>AddCommodityWithDefaults()</code>
+            </li>
+                <ul>
+                    <li>
+                        This method creates a new commodity and tries to add it to the simulation.
+                    </li>
+                    <li>
+                        It will fail, return false, if a commodity with the same unique identifier is already present in the economic simulation.
+                    </li>
+                </ul>
+            <li>
+                <code>NotifyOfChange()</code>
+            </li>
+                <ul>
+                    <li>
+                        Notifies the economic simulation that an economic event has occurred.
+                    </li>
+                </ul>
+            <li>
+                <code>NotifyOfTrade()</code>
+            </li>
+                <ul>
+                    <li>
+                        This method is a convenience function for the <code>NotifyOfChange()</code> method.
+                    </li>
+                </ul>
+        </ul>
+                
+                <h2>
+            Converting Package Files Into a Unity Build
+        </h2>
         <p>
             TODO...
         </p>
