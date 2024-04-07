@@ -276,7 +276,52 @@
             Exporting Simulation Data
         </h2>
         <p>
-            TODO...
+            EcoSim gives you the ability to export data from simulation instances for deeper analysis. In the engine settings configuration, tick the "Export data?" box and the export settings/filters will appear. By default all data for all commodities for every round will be exported. The settings and filters allow for more narrow exporting.
+        </p>
+        <p>
+            The available filters (applied to all chosen commodities):
+        </p>
+        <ul>
+            <li>
+                <code>All Data</code>: This filter tells the simulation to export all Price, Supply, Demand, and Average Price History.
+            </li>
+            <li>
+                <code>Price</code>: Export the price of each commodity for the given round.
+            </li>
+            <li>
+                <code>Supply</code>: Export the supply of each commodity for the given round.
+            </li>
+            <li>
+                <code>Demand</code>: Export the demand of each commodity for the given round.
+            </li>
+            <li>
+                <code>Average Price History</code>: Exports the average price of each commodity, as well as the range of rounds that are influencing this average.
+            </li>
+            <li>
+                <code>Starting Round</code>: This is the first round that data begins being exported.
+            </li>
+                <ul>
+                    <li>
+                        <code>0</code> by default, meaning the very first round of simulation.
+                    </li>
+                </ul>
+            <li>
+                <code>Ending Round</code>: This is the final round that data will be exported for.
+            </li>
+            <ul>
+                <li>
+                    <code>-1</code> by default. <code>-1</code> indicates that data will be continually exported until the simulation is terminated.
+                </li>
+                <li>
+                    For example, if <code>Starting Round = 10</code> and <code>Ending Round = -1</code>, then data will be exported from round 10 to the end of execution.
+                </li>
+            </ul>
+        </ul>
+        <p>
+            You can select which commodities data is exported. By default, all commodities in the selected simulation will be exported. Using the dropdown, you can select which commodities to add or remove. Any commodities that will be tracked are displayed in a list underneath the "Remove Commodity" button.
+        </p>
+        <p>
+            Data is exported into a <code>.csv</code> file, allowing you to import the data into Excel, an R project, or any environment that will accept the <code>.csv</code> type for further and deeper analysis. These files will be found in the <code>Assets/EcoSim/Editor/Data</code> directory with a name format of <code>&lt;simulation_name&gt;-&lt;date/time_simulation_started&gt;.csv</code> for easier management.
         </p>
 
         <h2>
