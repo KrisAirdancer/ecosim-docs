@@ -272,7 +272,57 @@
             Events System
         </h2>
         <p>
-            TODO: Get from Alex.
+            Each EcoEngine simulation has support for events that can be used for either testing the simulation, or to interact in various ways with the simulation during gameplay.
+        </p>
+            <ul>
+                <li>
+                    For example, a developer could set up events to have player interaction with vendors influence the simulation, or the developer could set up an event to trigger a massive change in the economic simulation in response to a in game story event.
+                </li>
+            </ul>
+        <p>
+            To use events to affect the simulation during gameplay, one will first need to create an <code>Ecosim.EventPiece</code>. An event piece consists of a commodity to affect and the attributes on that commodity to change, such as inflation, supply, demand, need level, and moving average duration.
+        </p>
+        <p>
+            Once created, the EventPiece can be triggered by calling <code>RunEventPiece</code> in the <code>EcosimManager</code> class with the new <code>EventPiece</code> and the name of the simulation you want to trigger the EventPiece in.
+        </p>
+        <p>
+            Events can also be created and run directly through EcoSim's Unity tools.
+        </p>
+        <p>
+            To use events for testing via the Unit tools,
+        <ol>
+            <li>
+                Open the "Events" Unity UI tool.
+            </li>
+            <li>
+                Select the simulation you want to test events on.
+            </li>
+            <li>
+                Select the commodity they want to affect.
+            </li>
+                <ul>
+                    <li>
+                        To trigger multiple events, create and add multiple event pieces.
+                    </li>
+                </ul>
+            <li>
+                Set the values for as desired.
+            </li>
+            <li>
+                Start the simulation in Unity.
+            </li>
+            <li>
+                Run the event by clicking the "Run Event" button.
+            </li>
+            <li>
+                The simulation will trigger the event as soon as possible.
+            </li>
+                <ul>
+                    <li>
+                        The simulation can be paused and the Run Event button will still work, but the event will not trigger until the simulation resumes.
+                    </li>
+                </ul>
+        </ol>
         </p>
 
         <h2>
