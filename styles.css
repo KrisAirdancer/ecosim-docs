@@ -20,7 +20,7 @@ nav > a {
     margin-right: 10px;
 }
 
-img {
+#team-photo {
     width: 100%;
     max-width: 700px;
     border: 2px solid rgb(156 163 175);
@@ -54,6 +54,9 @@ li {
 /***** CARD STYLES *****/
 
 .card {
+    display: flex;
+    align-items: center;
+
     box-sizing: border-box;
     padding: 10px 20px 10px 20px;
     margin-top: 15px;
@@ -86,6 +89,16 @@ li {
     color: rgb(2 132 199);
 }
 
+.profile-photo {
+    /* This one works */
+    width: 12em;
+    height: 12em;
+
+    margin-right: 5%;
+    border-radius: 50%;
+    border: 2px solid rgb(156 163 175);
+}
+
 /***** DARK MODE STYLES *****/
 
 .bg-dark {
@@ -102,4 +115,12 @@ li {
 
 .bg-gray-700 {
     background-color: rgb(55 65 81);
+}
+
+/***** MEDIA QUERIES *****/
+
+@media (width <= 600px) {
+    .profile-photo {
+        max-width: 0px;
+    }
 }

@@ -33,44 +33,45 @@
             Hello! We're team EcoSim.
         </p>
 
-        <img src="./assets/ecosim-team-photo.jpg">
-        <p>
-            From left: Chris Marston, Jared Hogan, Christian Gray, and Alex Fischer.
-        </p>
+        <img id="team-photo" src="./assets/ecosim-team-photo.jpg">
         <div id="personnel-cards"></div>
     </main>
 </body>
 </html>
 <script>
     let personnelData = [
-        {
-            firstName: "Chris",
-            lastName: "Marston",
-            email: "chris.scott.marston@gmail.com",
-            linkedIn: "https://www.linkedin.com/in/chris-s-marston/",
-            portfolio: "https://csmarston.com/",
-            bio: "Chris has a degree in Anthropology, but has come back to school for a BS in Computer Science. When he's not studying for exams, you'll likely find him at his computer working on projects, climbing, hiking, or mountain biking."
-        },
-        {
-            firstName: "Jared",
-            lastName: "Hogan",
-            email: "jaredh2505@gmail.com",
-            linkedIn: "https://www.linkedin.com/in/jared-hogan-6a3a421a8/",
-            bio: "Jared is about to graduate with his BS in Computer Science. When he has free time, you'll find him reading, climbing, and playing Dungeons and Dragons."
+    {
+            firstName: "Alex",
+            lastName: "Fischer",
+            email: "alex@email.com",
+            portfolio: "fischer.alexd@gmail.com",
+            bio: "Alex is excited to graduate and start seeing the real applications of what he has learned. When not coding, he will be hanging out with friends or family.",
+            photoLink: "Alex.jpg"
         },
         {
             firstName: "Christian",
             lastName: "Gray",
             email: "christianggray@protonmail.com",
             linkedIn: "https://www.linkedin.com/in/christianggray/",
-            bio: "Christian is graduating with a BS in Computer Science with a focus on systems programming and algorithms. While not working on projects, he likes to spend time playing video games, playing drums, and hammocking."
+            bio: "Christian is graduating with a BS in Computer Science with a focus on systems programming and algorithms. While not working on projects, he likes to spend time playing video games, playing drums, and hammocking.",
+            photoLink: "Christian.jpg"
         },
         {
-            firstName: "Alex",
-            lastName: "Fischer",
-            email: "alex@email.com",
-            portfolio: "fischer.alexd@gmail.com",
-            bio: "Alex is excited to graduate and start seeing the real applications of what he has learned. When not coding, he will be hanging out with friends or family."
+            firstName: "Chris",
+            lastName: "Marston",
+            email: "chris.scott.marston@gmail.com",
+            linkedIn: "https://www.linkedin.com/in/chris-s-marston/",
+            portfolio: "https://csmarston.com/",
+            bio: "Chris has a degree in Anthropology, but has come back to school for a BS in Computer Science. When he's not studying for exams, you'll likely find him at his computer working on projects, climbing, hiking, or mountain biking.",
+            photoLink: "Chris.jpg"
+        },
+        {
+            firstName: "Jared",
+            lastName: "Hogan",
+            email: "jaredh2505@gmail.com",
+            linkedIn: "https://www.linkedin.com/in/jared-hogan-6a3a421a8/",
+            bio: "Jared is about to graduate with his BS in Computer Science. When he has free time, you'll find him reading, climbing, and playing Dungeons and Dragons.",
+            photoLink: "Jared.jpg"
         }
     ]
 
@@ -79,25 +80,28 @@
     personnelData.forEach(person => {
         personnelHTML += `
             <div class="card">
-                <h2>
-                    ${person.firstName} ${person.lastName}
-                </h2>
-                <p>
-                    ${person.bio}
-                </p>
-                <h3>Contact</h3>
-                ${person.email ?
-                    `<p>${person.email}</p>` :
-                    ''
-                }
-                ${person.linkedIn ?
-                    `<p><a href='${person.linkedIn}'>LinkedIn</a></p>` :
-                    ''
-                }
-                ${person.portfolio ?
-                    `<p><a href='${person.portfolio}'>Portfolio</a></p>` :
-                    ''
-                }
+                <img class="profile-photo" src="assets/${person.photoLink}">
+                <div>
+                    <h2>
+                        ${person.firstName} ${person.lastName}
+                    </h2>
+                    <p>
+                        ${person.bio}
+                    </p>
+                    <h3>Contact</h3>
+                    ${person.email ?
+                        `<p>${person.email}</p>` :
+                        ''
+                    }
+                    ${person.linkedIn ?
+                        `<p><a href='${person.linkedIn}'>LinkedIn</a></p>` :
+                        ''
+                    }
+                    ${person.portfolio ?
+                        `<p><a href='${person.portfolio}'>Portfolio</a></p>` :
+                        ''
+                    }
+                </div>
             </div>
         `
     });
