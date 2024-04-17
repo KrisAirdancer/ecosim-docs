@@ -20,7 +20,7 @@ nav > a {
     margin-right: 10px;
 }
 
-#team-photo {
+img {
     width: 100%;
     max-width: 700px;
     border: 2px solid rgb(156 163 175);
@@ -49,6 +49,13 @@ li {
 
 #homepageTagline {
     margin-top: 0;
+}
+
+#team-photo {
+    width: 100%;
+    max-width: 700px;
+    border: 2px solid rgb(156 163 175);
+    border-radius: 10px;
 }
 
 /***** CARD STYLES *****/
@@ -90,7 +97,6 @@ li {
 }
 
 .profile-photo {
-    /* This one works */
     width: 12em;
     height: 12em;
 
@@ -117,10 +123,17 @@ li {
     background-color: rgb(55 65 81);
 }
 
+/***** OTHER *****/
+
+.video-embed {
+    border-radius: 10px;
+}
+
 /***** MEDIA QUERIES *****/
 
 @media (width <= 600px) {
     .profile-photo {
         max-width: 0px;
+        visibility: hidden;
     }
 }
